@@ -28,7 +28,6 @@ module(
     # breaking change affects most use cases and isn't easy to migrate and/or
     # work-around, and (2) *in the same commit* that introduces an incompatible
     # (breaking) change.
-
     compatibility_level = 0,
 )
 
