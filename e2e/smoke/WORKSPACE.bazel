@@ -17,3 +17,7 @@ local_repository(
 load("@rules_minio//minio:repositories.bzl", "rules_minio_dependencies")
 
 rules_minio_dependencies()
+
+load("@rules_minio//minio:repositories.bzl", "minio_register_toolchains")
+
+minio_register_toolchains("minio", minio_version = "RELEASE.2025-08-13T08-35-41Z")
