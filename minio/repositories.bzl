@@ -20,6 +20,8 @@ def http_archive(name, **kwargs):
 # and released only in semver majors.
 # This is all fixed by bzlmod, so we just tolerate it for now.
 def rules_minio_dependencies():
+    """Install workspace dependencies"""
+
     # The minimal version of bazel_skylib we require
     http_archive(
         name = "bazel_skylib",
