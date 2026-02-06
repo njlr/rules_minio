@@ -1,0 +1,19 @@
+load("@bazel_lib//lib:copy_to_directory.bzl", "copy_to_directory")
+load("@rules_minio//minio:defs.bzl", "mc_mirror")
+
+copy_to_directory(
+    name = "texts",
+    srcs = glob([
+        "texts/**/*.txt",
+    ]),
+    root_paths = [package_name() + "/texts"],
+)
+
+# Demonstrates that you can mirror a directory to S3.
+# Run the target to mirror the directory.
+mc_mirror(
+    name = "mirror",
+    alias = "local",
+    bucket = "test/texts",
+    dir = ":texts",
+)

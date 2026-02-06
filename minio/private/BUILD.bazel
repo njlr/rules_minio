@@ -1,0 +1,27 @@
+load("@bazel_lib//:bzl_library.bzl", "bzl_library")
+
+exports_files(["mc_mirror.sh.tpl"])
+
+bzl_library(
+    name = "mc_mirror",
+    srcs = ["mc_mirror.bzl"],
+    visibility = ["//minio:__subpackages__"],
+)
+
+bzl_library(
+    name = "resolved_toolchain",
+    srcs = ["resolved_toolchain.bzl"],
+    visibility = ["//minio:__subpackages__"],
+)
+
+bzl_library(
+    name = "toolchains_repo",
+    srcs = ["toolchains_repo.bzl"],
+    visibility = ["//minio:__subpackages__"],
+)
+
+bzl_library(
+    name = "versions",
+    srcs = ["versions.bzl"],
+    visibility = ["//minio:__subpackages__"],
+)

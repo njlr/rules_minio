@@ -1,0 +1,9 @@
+# Demonstrates that you can use the CLI in a genrule.
+# The toolchain provides a "Make variable" named MINIO_MC_BIN that you can expand.
+genrule(
+    name = "version",
+    srcs = [],
+    outs = ["version.txt"],
+    cmd = "$(MINIO_MC_BIN) --version > $@",
+    toolchains = ["@rules_minio//minio:resolved_toolchain"],
+)
